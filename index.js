@@ -109,6 +109,10 @@ async function run() {
         res.status(200).send(result)
     })
 
+
+    // pdf create and download
+    const PDFdocument =require('pdfkit');
+
     // await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
