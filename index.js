@@ -126,7 +126,8 @@ async function run() {
         }
         const doc = new PDFdocument({margin:40});
 
-        res.setHeader("Content-type")
+        res.setHeader("Content-type", application/pdf);
+        res.setHeader()
       }
     })
 
