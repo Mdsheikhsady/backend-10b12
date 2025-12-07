@@ -132,6 +132,8 @@ async function run() {
           `attachment; filename=${email}_orders_reports.pdf`
         );
         doc.pipe(res);
+        doc.pipe(res);
+        doc.fontSize(20).text
       }
     })
 
