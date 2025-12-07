@@ -113,6 +113,23 @@ async function run() {
     // pdf create and download
     const PDFdocument =require('pdfkit');
 
+    app.get('download-report', async(res, req)=>{
+      try{
+        const {email} =req.query;
+        if(!email){
+          return res.status(400).send({message: "Email is required"});
+        }
+        const query= {email};
+        const orders = await orderCollections.find(query).toArray();
+        if (orders.length===0){
+          return res.status(404).send({message: "No orders found"})
+        }
+        const doc = new PDFdocument({margin:40});
+
+        res.setHeader("Content-type")
+      }
+    })
+
     // await client.db("admin").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
