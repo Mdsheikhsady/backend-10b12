@@ -127,7 +127,11 @@ async function run() {
         const doc = new PDFdocument({margin:40});
 
         res.setHeader("Content-type", application/pdf);
-        res.setHeader()
+        res.setHeader(
+          "Content-Disposition",
+          `attachment; filename=${email}_orders_reports.pdf`
+        );
+        doc.pipe(res);
       }
     })
 
