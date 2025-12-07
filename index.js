@@ -111,35 +111,7 @@ async function run() {
 
 
     // pdf create and download
-    const PDFdocument =require('pdfkit');
-
-    app.get('download-report', async(res, req)=>{
-      try{
-        const {email} =req.query;
-        if(!email){
-          return res.status(400).send({message: "Email is required"});
-        }
-        const query= {email};
-        const orders = await orderCollections.find(query).toArray();
-        if (orders.length===0){
-          return res.status(404).send({message: "No orders found"})
-        }
-        const doc = new PDFdocument({margin:40});
-
-        res.setHeader("Content-type", application/pdf);
-        res.setHeader(
-          "Content-Disposition",
-          `attachment; filename=${email}_orders_reports.pdf`
-        );
-        doc.pipe(res);
-        doc.pipe(res);
-        doc.fontSize(20).text("PawMart - User Order Report", {align: "center"});
-        doc.moveDown();
-
-        doc.moveTo(40, doc.y).lineTo(560,doc.y).strokeColor();
-        doc.moveDown();
-      }
-    })
+    
 
     // await client.db("admin").command({ ping: 1 });
     console.log(
