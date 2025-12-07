@@ -136,7 +136,8 @@ async function run() {
         doc.fontSize(20).text("PawMart - User Order Report", {align: "center"});
         doc.moveDown();
 
-        doc.moveTo(40, doc.y)
+        doc.moveTo(40, doc.y).lineTo(560,doc.y).strokeColor();
+        doc.moveDown();
       }
     })
 
