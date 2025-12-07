@@ -133,7 +133,7 @@ async function run() {
         );
         doc.pipe(res);
         doc.pipe(res);
-        doc.fontSize(20).text
+        doc.fontSize(20).text("PawMart - User Order Report", {align: "center"})
       }
     })
 
